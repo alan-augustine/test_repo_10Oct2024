@@ -1,0 +1,26 @@
+# for use by AWS CodeBuild service
+version: 0.2
+
+env:
+  variables:
+    ENV_TEST_VAR: "A"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    on-failure: ABORT       
+    commands:
+      - echo "Install Phase - $(which python3)"
+  pre_build:
+    on-failure: ABORT     
+    commands:
+      - echo Execution started on `date`
+  build:
+    on-failure: ABORT   
+    commands:
+      - sh build.sh
+  post_build:
+    on-failure: CONTINUE   
+    commands:
+      - echo Execution completed on `date`
