@@ -13,5 +13,7 @@ zip my_artifact_${TIME_STAMP}.zip  my_artifact.txt
 rm -f my_artifact.txt
 
 cd ..
+echo "Path is ${PWD}"
+
 echo "Directory contents post build phase: "
 ls -R .
