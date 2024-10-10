@@ -24,3 +24,6 @@ phases:
     on-failure: CONTINUE   
     commands:
       - echo Execution completed on `date`
+  artifacts:
+    files:
+      - 'artifacts/*'
